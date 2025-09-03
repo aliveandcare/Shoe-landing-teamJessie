@@ -17,6 +17,6 @@ const Paragraph: React.FC<ParagraphProps> = ({
     </Component>
   );
 };
-
+//
 export default Paragraph;
 
