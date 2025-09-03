@@ -1,5 +1,8 @@
-import { Heading, Paragraph, Card } from './reusable';
+import Heading from './reusable/Heading';
+import Paragraph from './reusable/Paragraph';
+import Card from './reusable/Card';
 import Footer from '../sections/Footer';
+import Hero from '../sections/Hero';
 import RunningShoesImg from '../assets/RunningShoes.png';
 import WaterproofBootsImg from '../assets/WaterproofBoots.png';
 import BrearthableSneakersImg from '../assets/BrearthableSneakers.png';
@@ -7,6 +10,7 @@ import BrearthableSneakersImg from '../assets/BrearthableSneakers.png';
 const Home = () => {
   return (
     <>
+      <Hero />
       <main className="p-8 max-w-4xl mx-auto">
         <Heading level={1} className="text-blue-600">
           Component Showcase
