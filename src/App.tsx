@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Heading from './components/reusable/Heading';
+import Paragraph from './components/reusable/Paragraph';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="p-8 max-w-4xl mx-auto">
+      
+      <Heading level={1} className="text-blue-600">
+        Component Showcase
+      </Heading>
+
+      <Paragraph className="text-gray-500 mt-2 mb-8">
+        This page demonstrates the reusable Heading and Paragraph components.
+      </Paragraph>
+
+      <Heading level={2}>Heading Level Examples</Heading>
+      <Heading level={1}>Heading Level 1</Heading>
+      <Heading level={2}>Heading Level 2</Heading>
+      <Heading level={3}>Heading Level 3</Heading>
+      <Heading level={4}>Heading Level 4</Heading>
+      <Heading level={5}>Heading Level 5</Heading>
+      <Heading level={6}>Heading Level 6</Heading>
+
+      <Heading level={2} className="mt-8">Paragraph Examples</Heading>
+
+      <Paragraph>
+        This is a default paragraph using the `p` tag. It uses the default placeholder text if no children are provided.
+      </Paragraph>
+
+      <Paragraph className="mt-4 text-sm italic text-purple-700">
+        This paragraph has custom Tailwind CSS classes applied for a different style.
+      </Paragraph>
+
+      <div className="mt-4 p-4 bg-gray-100 rounded-md">
+        This is a{' '}
+        <Paragraph as="span" className="font-bold text-red-600">
+          span element
+        </Paragraph>
+        {' '}inside a div, rendered using the Paragraph component.
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      
+    </main>
+  );
 }
 
-export default App
+export default App;
+
