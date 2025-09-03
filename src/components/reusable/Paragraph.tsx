@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface ParagraphProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   as?: 'p' | 'span' | 'div';
 }
@@ -11,12 +11,13 @@ const Paragraph: React.FC<ParagraphProps> = ({
   className = '',
   as: Component = 'p',
 }) => {
+  const content = children || "This is placeholder text. Replace this with your own content.";
+  
   return (
     <Component className={className}>
-      {children}
+      {content}
     </Component>
   );
 };
-//
-export default Paragraph;
 
+export default Paragraph;
