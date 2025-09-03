@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Contacts from './components/Contacts';
 
-import Button from './components/reusable/Button';
+import { Button } from './components/reusable';
 
 const App: React.FC = () => {
   return (

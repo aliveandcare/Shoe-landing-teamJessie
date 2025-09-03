@@ -1,6 +1,4 @@
-import Heading from './reusable/Heading';
-import Paragraph from './reusable/Paragraph';
-import Card from './reusable/Card';
+import { Heading, Paragraph, Card } from './reusable';
 import Footer from '../sections/Footer';
 import RunningShoesImg from '../assets/RunningShoes.png';
 import WaterproofBootsImg from '../assets/WaterproofBoots.png';

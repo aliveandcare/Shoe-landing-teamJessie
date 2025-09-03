@@ -1,5 +1,4 @@
-import Paragraph from '../components/reusable/Paragraph';
-import Button from '../components/reusable/Button';
+import { Paragraph, Button } from '../components/reusable';
 
 const Footer = () => (
   <footer className="bg-gray-100 py-8 mt-12">
