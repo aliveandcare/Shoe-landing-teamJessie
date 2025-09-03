@@ -1,5 +1,9 @@
 import Heading from './reusable/Heading';
 import Paragraph from './reusable/Paragraph';
+import Card from './reusable/Card';
+import RunningShoesImg from '../assets/RunningShoes.png';
+import WaterproofBootsImg from '../assets/WaterproofBoots.png';
+import BrearthableSneakersImg from '../assets/BrearthableSneakers.png';
 
 const Home = () => {
   return (
@@ -10,6 +14,26 @@ const Home = () => {
       <Paragraph className="text-gray-500 mt-2 mb-8">
         This page demonstrates the reusable Heading and Paragraph components.
       </Paragraph>
+      {/* Card Showcase Section */}
+      <Heading level={2} className="mt-8 mb-4">Product & Feature Cards</Heading>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+        <Card
+          title="Running Shoes"
+          image={RunningShoesImg}
+          description="Lightweight and comfortable shoes perfect for daily runs."
+        />
+        <Card
+          title="Waterproof Boots"
+          image={WaterproofBootsImg}
+          description="Durable boots designed for all weather conditions."
+        />
+        <Card
+          title="Breathable Sneakers"
+          image={BrearthableSneakersImg}
+          description="Stay cool and stylish with our breathable sneaker collection."
+        />
+      </div>
+      {/* ...existing code... */}
       <Heading level={2}>Heading Level Examples</Heading>
       <Heading level={1}>Heading Level 1</Heading>
       <Heading level={2}>Heading Level 2</Heading>
