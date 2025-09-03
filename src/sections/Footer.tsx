@@ -1,5 +1,5 @@
-import Paragraph from './Paragraph';
-import Button from './Button';
+import Paragraph from '../components/reusable/Paragraph';
+import Button from '../components/reusable/Button';
 
 const Footer = () => (
   <footer className="bg-gray-100 py-8 mt-12">
