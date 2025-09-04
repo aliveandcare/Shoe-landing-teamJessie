@@ -3,7 +3,7 @@ import React from 'react';
 import Button from './Button';
 
 interface CardProps {
-  title: string;
+  title: React.ReactNode;
   image: string;
   description: string;
   price?: string;
@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({
     >
       <img
         src={image}
-        alt={title}
+        alt={typeof title === 'string' ? title : 'Product image'}
         className="w-full h-48 object-cover rounded-lg mb-4 bg-gray-200"
       />
       <div className="flex items-center justify-between w-full mb-2">
