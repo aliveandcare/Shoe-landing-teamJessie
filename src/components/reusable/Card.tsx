@@ -1,4 +1,6 @@
+
 import React from 'react';
+import Button from './Button';
 
 interface CardProps {
   title: string;
@@ -43,13 +45,11 @@ const Card: React.FC<CardProps> = ({
           </div>
         </div>
       )}
-      <button
-        type="button"
-        onClick={onAddToCart}
+      <Button
+        text="Add to Cart"
+        onClick={onAddToCart ?? (() => {})}
         className="w-full mt-auto bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
-      >
-        Add to Cart
-      </button>
+      />
     </div>
   );
 };
