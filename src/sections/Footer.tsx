@@ -1,5 +1,4 @@
 import Paragraph from '../components/reusable/Paragraph';
-import Button from '../components/reusable/Button';
 
 const Footer = () => (
   <footer className="bg-gray-100 py-8 mt-12">
@@ -20,8 +19,7 @@ const Footer = () => (
           <a href="/features" className="text-gray-700 hover:text-teal-600 font-medium">Features</a>
           <a href="/about" className="text-gray-700 hover:text-teal-600 font-medium">About Us</a>
           <a href="/contact" className="text-gray-700 hover:text-teal-600 font-medium">Contact</a>
-        </nav>
-        <Button text="Subscribe" onClick={() => alert('Subscribed!')} className="mt-4" />
+        </nav>       
       </div>
     </div>
     <div className="mt-8 text-center text-sm text-gray-500">
