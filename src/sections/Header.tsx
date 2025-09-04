@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Heading from '../components/reusable/Heading';
 import Button from '../components/reusable/Button';
+import logo from '../assets/HeaderStyleReusable.png';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,9 +18,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <Link to="/">
-              <Heading level={3} className="text-2xl font-bold text-gray-800">
-                ShoeStyle
-              </Heading>
+              <img src={logo} alt="ShoeStyle Logo" className="h-16 w-auto" />
             </Link>
           </div>
 
@@ -89,3 +87,4 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+
