@@ -1,7 +1,9 @@
+
 import React from 'react';
+import Button from './Button';
 
 interface CardProps {
-  title: string;
+  title: React.ReactNode;
   image: string;
   description: string;
   price?: string;
@@ -25,7 +27,7 @@ const Card: React.FC<CardProps> = ({
     >
       <img
         src={image}
-        alt={title}
+        alt={typeof title === 'string' ? title : 'Product image'}
         className="w-full h-48 object-cover rounded-lg mb-4 bg-gray-200"
       />
       <div className="flex items-center justify-between w-full mb-2">
@@ -43,13 +45,11 @@ const Card: React.FC<CardProps> = ({
           </div>
         </div>
       )}
-      <button
-        type="button"
-        onClick={onAddToCart}
+      <Button
+        text="Add to Cart"
+        onClick={onAddToCart ?? (() => {})}
         className="w-full mt-auto bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
-      >
-        Add to Cart
-      </button>
+      />
     </div>
   );
 };

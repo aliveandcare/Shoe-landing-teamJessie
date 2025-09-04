@@ -2,6 +2,7 @@ import Heading from './reusable/Heading';
 import Paragraph from './reusable/Paragraph';
 import Card from './reusable/Card';
 import Footer from '../sections/Footer';
+import Hero from '../sections/Hero';
 import RunningShoesImg from '../assets/RunningShoes.png';
 import WaterproofBootsImg from '../assets/WaterproofBoots.png';
 import BrearthableSneakersImg from '../assets/BrearthableSneakers.png';
@@ -9,6 +10,7 @@ import BrearthableSneakersImg from '../assets/BrearthableSneakers.png';
 const Home = () => {
   return (
     <>
+      <Hero />
       <main className="p-8 max-w-4xl mx-auto">
         {/* Hero Section Anchor */}
         <div id="hero"></div>
@@ -23,19 +25,25 @@ const Home = () => {
         <Heading level={2} className="mt-8 mb-4">Product & Feature Cards</Heading>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
           <Card
-            title="Running Shoes"
+            title={<>Running<br />Shoes</>}
             image={RunningShoesImg}
             description="Lightweight and comfortable shoes perfect for daily runs."
+            price="$89.99"
+            colors={["Black", "White", "Red"]}
           />
           <Card
             title="Waterproof Boots"
             image={WaterproofBootsImg}
             description="Durable boots designed for all weather conditions."
+            price="$129.99"
+            colors={["Brown", "Black", "Tan"]}
           />
           <Card
             title="Breathable Sneakers"
             image={BrearthableSneakersImg}
             description="Stay cool and stylish with our breathable sneaker collection."
+            price="$59.99"
+            colors={["White", "Gray", "Blue"]}
           />
         </div>
   {/* Contact Info Section Anchor (empty for scroll target) */}
