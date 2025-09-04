@@ -1,31 +1,31 @@
 import Paragraph from '../components/reusable/Paragraph';
-import Button from '../components/reusable/Button';
 
 const Footer = () => (
   <footer className="bg-gray-100 py-8 mt-12">
-    <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
-      <div className="flex-1 text-center md:text-left">
-        <Paragraph>
-          <span className="font-semibold">Contact Us:</span><br />
-          Email: <a href="mailto:info@shoelanding.com" className="underline text-blue-600">info@shoelanding.com</a><br />
-          Phone: <a href="tel:+1234567890" className="underline text-blue-600">+1 (234) 567-890</a>
-        </Paragraph>
-      </div>
-      <div className="flex-1 flex flex-col items-center md:items-end">
-        <Paragraph>
-          <span className="font-semibold">Useful Links:</span>
-        </Paragraph>
-        <nav className="flex flex-wrap gap-4 mt-2">
-          <a href="/products" className="text-gray-700 hover:text-teal-600 font-medium">Products</a>
-          <a href="/features" className="text-gray-700 hover:text-teal-600 font-medium">Features</a>
-          <a href="/about" className="text-gray-700 hover:text-teal-600 font-medium">About Us</a>
-          <a href="/contact" className="text-gray-700 hover:text-teal-600 font-medium">Contact</a>
+    <div className="max-w-7xl mx-auto px-6">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-4">
+        <div className="flex flex-col items-start text-left">
+          <div className="font-bold text-xl text-gray-800 mb-2">ShoeStyle</div>
+          <Paragraph className="text-sm text-gray-600 text-left">
+            <span className="font-semibold">Contact Us:</span><br />
+            Email: <a href="mailto:info@shoelanding.com" className="underline text-blue-600">info@shoelanding.com</a><br />
+            Phone: <a href="tel:+1234567890" className="underline text-blue-600">+1 (234) 567-890</a>
+          </Paragraph>
+        </div>
+        <nav className="flex gap-8 text-gray-700 font-medium mt-4 md:mt-0">
+          <a href="#hero" className="hover:text-teal-600">About</a>
+          <a href="#product-cards" className="hover:text-teal-600">Products</a>
+          <a href="#contact-info" className="hover:text-teal-600">Contact</a>
         </nav>
-        <Button text="Subscribe" onClick={() => alert('Subscribed!')} className="mt-4" />
       </div>
-    </div>
-    <div className="mt-8 text-center text-sm text-gray-500">
-      &copy; {new Date().getFullYear()} Shoe Landing Team Jessie. All rights reserved.
+      <hr className="border-gray-200 mb-4" />
+      <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <div className="mb-2 md:mb-0">&copy; {new Date().getFullYear()} ShoeStyle. All rights reserved.</div>
+        <div className="flex gap-6">
+          <a href="/privacy" className="hover:text-teal-600">Privacy</a>
+          <a href="/terms" className="hover:text-teal-600">Terms</a>
+        </div>
+      </div>
     </div>
   </footer>
 );
