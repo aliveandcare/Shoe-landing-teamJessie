@@ -22,19 +22,25 @@ const Home = () => {
         <Heading level={2} className="mt-8 mb-4">Product & Feature Cards</Heading>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
           <Card
-            title="Running Shoes"
+            title={<>Running<br />Shoes</>}
             image={RunningShoesImg}
             description="Lightweight and comfortable shoes perfect for daily runs."
+            price="$89.99"
+            colors={["Black", "White", "Red"]}
           />
           <Card
             title="Waterproof Boots"
             image={WaterproofBootsImg}
             description="Durable boots designed for all weather conditions."
+            price="$129.99"
+            colors={["Brown", "Black", "Tan"]}
           />
           <Card
             title="Breathable Sneakers"
             image={BrearthableSneakersImg}
             description="Stay cool and stylish with our breathable sneaker collection."
+            price="$59.99"
+            colors={["White", "Gray", "Blue"]}
           />
         </div>
         {/* ...existing code... */}
