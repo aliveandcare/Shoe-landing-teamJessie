@@ -3,44 +3,52 @@ import Card from '../components/reusable/Card';
 import RunningShoesImg from '../assets/RunningShoes.png';
 import WaterproofBootsImg from '../assets/WaterproofBoots.png';
 import BreathableSneakersImg from '../assets/BrearthableSneakers.png';
+import MensDressShoesImg from '../assets/MensDressShoes.png';
 
 const featuresData = [
   {
-    title: 'Running Shoes',
-    description: 'Lightweight and comfortable shoes perfect for daily runs.',
+    title: 'Air Comfort Pro',
+    description: 'Lightweight running shoes with enhanced cushioning for maximum comfort.',
     image: RunningShoesImg,
-    price: '$89.99',
+    price: '$129.99',
     colors: ['Black', 'White', 'Red'],
   },
   {
-    title: 'Waterproof Boots',
-    description: 'Durable boots designed for all weather conditions.',
-    image: WaterproofBootsImg,
-    price: '$129.99',
-    colors: ['Brown', 'Black', 'Tan'],
+    title: 'Urban Walker',
+    description: 'Stylish casual shoes perfect for everyday urban adventures.',
+    image: BreathableSneakersImg,
+    price: '$99.99',
+    colors: ['Navy', 'Gray', 'Olive'],
   },
   {
-    title: 'Breathable Sneakers',
-    description: 'Stay cool and stylish with our breathable sneaker collection.',
-    image: BreathableSneakersImg,
-    price: '$59.99',
-    colors: ['White', 'Gray', 'Blue'],
+    title: 'Trail Blazer X',
+    description: 'Durable hiking shoes with superior grip for all terrains.',
+    image: WaterproofBootsImg,
+    price: '$149.99',
+    colors: ['Brown', 'Black', 'Orange'],
+  },
+  {
+    title: 'Classic Elegance',
+    description: 'Timeless leather dress shoes for formal occasions.',
+    image: MensDressShoesImg,
+    price: '$159.99',
+    colors: ['Black', 'Brown', 'Burgundy'],
   },
 ];
 
 const Features: React.FC = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            Featured Products
+            Our Collection
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Check out our latest and greatest selection.
+            Discover our latest shoes designed for style, comfort, and durability.
           </p>
         </div>
-        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {featuresData.map((feature, index) => (
             <Card
               key={index}
