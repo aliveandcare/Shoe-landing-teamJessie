@@ -1,16 +1,15 @@
-import Heading from './reusable/Heading';
-import Paragraph from './reusable/Paragraph';
-import Card from './reusable/Card';
-import Footer from './reusable/Footer';
-import Hero from '../sections/Hero';
-import RunningShoesImg from '../assets/RunningShoes.png';
-import WaterproofBootsImg from '../assets/WaterproofBoots.png';
-import BrearthableSneakersImg from '../assets/BrearthableSneakers.png';
 
-const Home = () => {
+import React from 'react';
+import Hero from '../sections/Hero';
+import Features from '../sections/Features';
+import Footer from '../sections/Footer';
+
+
+const Home: React.FC = () => {
   return (
     <>
       <Hero />
+
       <main className="p-8 max-w-4xl mx-auto">
         <Heading level={1} className="text-blue-600">
           Component Showcase
@@ -60,9 +59,13 @@ const Home = () => {
           {' '}inside a div, rendered using the Paragraph component.
         </div>
       </main>
+
+      <Features />
+
       <Footer />
     </>
   );
 };
 
 export default Home;
+

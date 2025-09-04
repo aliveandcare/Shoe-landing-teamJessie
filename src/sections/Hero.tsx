@@ -18,7 +18,10 @@ const Hero = () => (
         Discover our latest collection of shoes designed for every adventure. Quality, comfort, and style in every step.
       </Paragraph>
       <Button
-        text="Shop Now"
+
+
+        text="Shop Collection"
+
         onClick={() => window.location.href = '/products'}
         className="bg-teal-600 hover:bg-teal-700 px-8 py-4 text-lg rounded-lg shadow-lg"
       />
@@ -27,3 +30,4 @@ const Hero = () => (
 );
 
 export default Hero;
+
