@@ -12,13 +12,16 @@ const Home = () => {
     <>
       <Hero />
       <main className="p-8 max-w-4xl mx-auto">
+        {/* Hero Section Anchor */}
+        <div id="hero"></div>
         <Heading level={1} className="text-blue-600">
           Component Showcase
         </Heading>
         <Paragraph className="text-gray-500 mt-2 mb-8">
           This page demonstrates the reusable Heading and Paragraph components.
         </Paragraph>
-        {/* Card Showcase Section */}
+        {/* Product Cards Section Anchor */}
+        <div id="product-cards"></div>
         <Heading level={2} className="mt-8 mb-4">Product & Feature Cards</Heading>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
           <Card
@@ -43,6 +46,8 @@ const Home = () => {
             colors={["White", "Gray", "Blue"]}
           />
         </div>
+  {/* Contact Info Section Anchor (empty for scroll target) */}
+  <div id="contact-info"></div>
         {/* ...existing code... */}
         <Heading level={2}>Heading Level Examples</Heading>
         <Heading level={1}>Heading Level 1</Heading>
