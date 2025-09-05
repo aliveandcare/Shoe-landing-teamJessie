@@ -7,15 +7,11 @@ const Header: React.FC = () => {
 
   const navLinks = [
 
-    { href: '/about', label: 'About', disabled: false },
-    { href: '/product', label: 'Product', disabled: false },
-    { href: '/contact', label: 'Contact', disabled: true },
+    { href: '/', label: 'About' },
+    { href: '/', label: 'Product' },
+    { href: '/', label: 'Contact' },
 
   ];
-
-  const handleDisabledClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-  };
 
   return (
     <header className="bg-white shadow-md">
@@ -30,21 +26,15 @@ const Header: React.FC = () => {
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 to={link.href}
-                onClick={link.disabled ? handleDisabledClick : undefined}
-                className={
-                  link.disabled
-                    ? "text-gray-400 cursor-not-allowed font-medium"
-                    : "text-gray-600 hover:text-teal-600 transition-colors duration-200 font-medium"
-                }
-                aria-disabled={link.disabled}
+                className="text-gray-600 hover:text-teal-600 transition-colors duration-200 font-medium"
               >
                 {link.label}
               </Link>
             ))}
             <Link
-              to="/signin"
+              to="/"
               className="text-teal-600 hover:text-teal-800 transition-colors duration-200 font-semibold"
             >
               Sign In
@@ -77,15 +67,9 @@ const Header: React.FC = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 to={link.href}
-                onClick={link.disabled ? handleDisabledClick : undefined}
-                className={
-                  link.disabled
-                    ? "text-gray-400 block px-3 py-2 rounded-md text-base font-medium cursor-not-allowed"
-                    : "text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium"
-                }
-                aria-disabled={link.disabled}
+                className="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium"
               >
                 {link.label}
               </Link>
