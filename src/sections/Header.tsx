@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../components/reusable/Button';
-import logo from '../assets/HeaderStyleReusable.png';
+import HeaderLogo from '../assets/HeaderStyleReusable.png';
 
 const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const navLinks = [
-    { href: '/about', label: 'About' },
-    { href: '/product', label: 'Product' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/about', label: 'About', disabled: false },
+    { href: '/product', label: 'Product', disabled: false },
+    { href: '/contact', label: 'Contact', disabled: true },
   ];
+
+  const handleDisabledClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+  };
 
   return (
     <header className="bg-white shadow-md">
@@ -18,7 +21,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
             <Link to="/">
-              <img src={logo} alt="ShoeStyle Logo" className="h-16 w-auto" />
+              <img src={HeaderLogo} alt="ShoeStyle Logo" className="h-16 w-auto" />
             </Link>
           </div>
 
@@ -27,16 +30,23 @@ const Header: React.FC = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className="text-gray-600 hover:text-teal-600 transition-colors duration-200 font-medium"
+                onClick={link.disabled ? handleDisabledClick : undefined}
+                className={
+                  link.disabled
+                    ? "text-gray-400 cursor-not-allowed font-medium"
+                    : "text-gray-600 hover:text-teal-600 transition-colors duration-200 font-medium"
+                }
+                aria-disabled={link.disabled}
               >
                 {link.label}
               </Link>
             ))}
-            <Button
-              text="Sign In"
-              onClick={() => { /* Handle Sign In */ }}
-              className="px-6 py-2"
-            />
+            <Link
+              to="/signin"
+              className="text-teal-600 hover:text-teal-800 transition-colors duration-200 font-semibold"
+            >
+              Sign In
+            </Link>
           </div>
 
           <div className="md:hidden flex items-center">
@@ -67,17 +77,24 @@ const Header: React.FC = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium"
+                onClick={link.disabled ? handleDisabledClick : undefined}
+                className={
+                  link.disabled
+                    ? "text-gray-400 block px-3 py-2 rounded-md text-base font-medium cursor-not-allowed"
+                    : "text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium"
+                }
+                aria-disabled={link.disabled}
               >
                 {link.label}
               </Link>
             ))}
              <div className="pt-2 px-3">
-                <Button
-                text="Sign In"
-                onClick={() => { /* Handle Sign In */ }}
-                className="w-full"
-                />
+                <Link
+                  to="/signin"
+                  className="bg-teal-600 text-white block w-full text-center px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Sign In
+                </Link>
             </div>
           </div>
         </div>
