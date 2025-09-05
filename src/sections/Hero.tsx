@@ -1,7 +1,10 @@
+
 import Heading from '../components/reusable/Heading';
 import Paragraph from '../components/reusable/Paragraph';
 import Button from '../components/reusable/Button';
 import BackgroundImg from '../assets/Background.png';
+// @ts-expect-error: Vite import.meta.env for Vercel detection
+const isVercel = import.meta.env.VERCEL === '1' || import.meta.env.VERCEL === true;
 
 const Hero = () => (
   <section
@@ -21,6 +24,7 @@ const Hero = () => (
         text="Shop Collection"
         onClick={() => window.location.href = '/'}
         className="bg-teal-600 hover:bg-teal-700 px-8 py-4 text-lg rounded-lg shadow-lg"
+        disabled={isVercel}
       />
     </div>
   </section>
