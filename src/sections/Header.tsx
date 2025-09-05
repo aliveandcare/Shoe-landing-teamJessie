@@ -6,9 +6,11 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const navLinks = [
+
     { href: '/', label: 'About' },
     { href: '/', label: 'Product' },
     { href: '/', label: 'Contact' },
+
   ];
 
   return (

@@ -1,44 +1,63 @@
 import React from 'react';
 import Card from '../components/reusable/Card';
-import Heading from '../components/reusable/Heading';
+import RunningShoesImg from '../assets/RunningShoes.png';
+import WaterproofBootsImg from '../assets/WaterproofBoots.png';
+import BreathableSneakersImg from '../assets/BrearthableSneakers.png';
+import MensDressShoesImg from '../assets/MensDressShoes.png';
 
 const featuresData = [
   {
-    title: 'Lightweight Design',
-    description: 'Experience unparalleled comfort with our feather-light construction, perfect for all-day wear.',
-    image: 'https://placehold.co/600x400/E2E8F0/4A5568?text=Feature+1',
+    title: 'Air Comfort Pro',
+    description: 'Lightweight running shoes with enhanced cushioning for maximum comfort.',
+    image: RunningShoesImg,
+    price: '$129.99',
+    colors: ['Black', 'White', 'Red'],
   },
   {
-    title: 'Durable Materials',
-    description: 'Crafted from high-quality, resilient materials to withstand your most demanding adventures.',
-    image: 'https://placehold.co/600x400/CBD5E0/4A5568?text=Feature+2',
+    title: 'Urban Walker',
+    description: 'Stylish casual shoes perfect for everyday urban adventures.',
+    image: BreathableSneakersImg,
+    price: '$99.99',
+    colors: ['Navy', 'Gray', 'Olive'],
   },
   {
-    title: 'Breathable Fabric',
-    description: 'Our advanced fabric technology ensures maximum airflow, keeping your feet cool and dry.',
-    image: 'https://placehold.co/600x400/A0AEC0/4A5568?text=Feature+3',
+    title: 'Trail Blazer X',
+    description: 'Durable hiking shoes with superior grip for all terrains.',
+    image: WaterproofBootsImg,
+    price: '$149.99',
+    colors: ['Brown', 'Black', 'Orange'],
+  },
+  {
+    title: 'Classic Elegance',
+    description: 'Timeless leather dress shoes for formal occasions.',
+    image: MensDressShoesImg,
+    price: '$159.99',
+    colors: ['Black', 'Brown', 'Burgundy'],
   },
 ];
 
 const Features: React.FC = () => {
   return (
-    <section className="py-16 bg-gray-50 sm:py-24">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <Heading level={2} className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            Why Choose Our Shoes?
-          </Heading>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-600">
-            Crafted for performance, designed for life.
+          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            Our Collection
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            Discover our latest shoes designed for style, comfort, and durability.
           </p>
         </div>
-        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {featuresData.map((feature, index) => (
             <Card
               key={index}
               title={feature.title}
               description={feature.description}
               image={feature.image}
+              price={feature.price}
+              colors={feature.colors}
+              onAddToCart={() => console.log(`Added ${feature.title} to cart`)}
             />
           ))}
         </div>

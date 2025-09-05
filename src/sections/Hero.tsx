@@ -19,7 +19,7 @@ const Hero = () => (
       </Paragraph>
       <Button
         text="Shop Collection"
-        onClick={() => window.location.href = '/products'}
+        onClick={() => window.location.href = '/'}
         className="bg-teal-600 hover:bg-teal-700 px-8 py-4 text-lg rounded-lg shadow-lg"
       />
     </div>
@@ -27,3 +27,4 @@ const Hero = () => (
 );
 
 export default Hero;
+
