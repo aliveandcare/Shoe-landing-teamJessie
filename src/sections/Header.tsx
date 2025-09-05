@@ -7,9 +7,9 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: '/about', label: 'About' },
-    { href: '/product', label: 'Product' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/', label: 'About' },
+    { href: '/', label: 'Product' },
+    { href: '/', label: 'Contact' },
   ];
 
   return (
