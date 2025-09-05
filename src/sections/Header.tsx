@@ -34,7 +34,7 @@ const Header: React.FC = () => {
               </Link>
             ))}
             <Link
-              to="/signin"
+              to="/"
               className="text-teal-600 hover:text-teal-800 transition-colors duration-200 font-semibold"
             >
               Sign In
