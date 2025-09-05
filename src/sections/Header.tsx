@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+// @ts-expect-error: Vite's import.meta.env may not have VERCEL type, but it's injected at build time on Vercel
+const isVercel = import.meta.env.VERCEL === '1' || import.meta.env.VERCEL === true;
 import Button from '../components/reusable/Button';
 import logo from '../assets/HeaderStyleReusable.png';
 
@@ -24,13 +26,23 @@ const Header: React.FC = () => {
 
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="text-gray-600 hover:text-teal-600 transition-colors duration-200 font-medium"
-              >
-                {link.label}
-              </Link>
+              isVercel ? (
+                <span
+                  key={link.href}
+                  className="text-gray-400 cursor-not-allowed transition-colors duration-200 font-medium"
+                  aria-disabled="true"
+                >
+                  {link.label}
+                </span>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-gray-600 hover:text-teal-600 transition-colors duration-200 font-medium"
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
             <Button
               text="Sign In"
@@ -64,13 +76,23 @@ const Header: React.FC = () => {
         <div className="md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium"
-              >
-                {link.label}
-              </Link>
+              isVercel ? (
+                <span
+                  key={link.href}
+                  className="text-gray-400 block px-3 py-2 rounded-md text-base font-medium cursor-not-allowed"
+                  aria-disabled="true"
+                >
+                  {link.label}
+                </span>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
              <div className="pt-2 px-3">
                 <Button
