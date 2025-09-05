@@ -6,9 +6,11 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const navLinks = [
+
     { href: '/about', label: 'About', disabled: false },
     { href: '/product', label: 'Product', disabled: false },
     { href: '/contact', label: 'Contact', disabled: true },
+
   ];
 
   const handleDisabledClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

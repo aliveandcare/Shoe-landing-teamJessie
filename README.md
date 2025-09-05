@@ -1,3 +1,12 @@
+# ShoeStyle - Landing Page
+
+A modern and responsive shoe store landing page built with React, TypeScript, and Tailwind CSS.
+
+**Live Demo:** [https://shoe-landing-team-jessie.vercel.app]
+
+---
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
