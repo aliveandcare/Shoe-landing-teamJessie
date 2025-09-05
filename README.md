@@ -2,7 +2,7 @@
 
 A modern and responsive shoe store landing page built with React, TypeScript, and Tailwind CSS.
 
-**Live Demo:** [shoe-landing-team-jessie-b2ttte9zk.vercel.app]
+**Live Demo:** [shoe-landing-team-jessie.vercel.app]
 
 ---
 
