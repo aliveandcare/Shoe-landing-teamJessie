@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HeaderLogo from '../assets/HeaderStyleReusable.png';
+import { useCart } from '../context/CartContext';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const { toggleCart, cartCount } = useCart();
 
   const navLinks = [
-
-    { href: '/', label: 'About' },
-    { href: '/', label: 'Product' },
-    { href: '/', label: 'Contact' },
-
+    { href: '/about', label: 'About' },
+    { href: '/product', label: 'Product' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white shadow-md sticky top-0 z-30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
@@ -39,9 +39,29 @@ const Header: React.FC = () => {
             >
               Sign In
             </Link>
+            <button onClick={toggleCart} className="relative text-gray-600 hover:text-teal-600">
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 flex items-center justify-center h-5 w-5 bg-red-500 text-white text-xs rounded-full">
+                  {cartCount}
+                </span>
+              )}
+            </button>
           </div>
 
           <div className="md:hidden flex items-center">
+             <button onClick={toggleCart} className="relative text-gray-600 hover:text-teal-600 mr-4">
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 flex items-center justify-center h-5 w-5 bg-red-500 text-white text-xs rounded-full">
+                  {cartCount}
+                </span>
+              )}
+            </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
@@ -70,14 +90,16 @@ const Header: React.FC = () => {
                 key={link.label}
                 to={link.href}
                 className="text-gray-700 hover:bg-gray-100 block px-3 py-2 rounded-md text-base font-medium"
+                onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
              <div className="pt-2 px-3">
                 <Link
-                  to="/signin"
+                  to="/"
                   className="bg-teal-600 text-white block w-full text-center px-3 py-2 rounded-md text-base font-medium"
+                   onClick={() => setIsMenuOpen(false)}
                 >
                   Sign In
                 </Link>
@@ -90,4 +112,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-
