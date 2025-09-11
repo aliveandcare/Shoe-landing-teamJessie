@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, type ReactNode } from 'react';
+import { createContext, useContext, useReducer, type ReactNode } from 'react';
 import { type Product, type CartItem } from '../types';
 
 interface CartState {
@@ -10,13 +10,13 @@ type CartAction =
   | { type: 'ADD_ITEM'; payload: Product }
   | { type: 'REMOVE_ITEM'; payload: { id: number } }
   | { type: 'TOGGLE_CART' }
-  | { type: 'CLEAR_CART' }; // New action
+  | { type: 'CLEAR_CART' };
 
 interface CartContextType extends CartState {
   addToCart: (product: Product) => void;
   removeFromCart: (id: number) => void;
   toggleCart: () => void;
-  clearCart: () => void; // New function
+  clearCart: () => void;
   cartCount: number;
   totalPrice: number;
 }
@@ -47,7 +47,7 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
       };
     case 'TOGGLE_CART':
       return { ...state, isOpen: !state.isOpen };
-    case 'CLEAR_CART': // New case
+    case 'CLEAR_CART':
       return { ...state, items: [] };
     default:
       return state;
@@ -69,7 +69,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     dispatch({ type: 'TOGGLE_CART' });
   };
 
-  const clearCart = () => { // New function implementation
+  const clearCart = () => {
     dispatch({ type: 'CLEAR_CART' });
   };
   

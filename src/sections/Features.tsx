@@ -5,9 +5,7 @@ import AirComfortProImg from '../assets/RunningShoes.png';
 import UrbanWalkerImg from '../assets/BrearthableSneakers.png';
 import TrailBlazerXImg from '../assets/WaterproofBoots.png';
 import ClassicEleganceImg from '../assets/MensDressShoes.png';
-import { useCart } from '../context/CartContext';
-import { useNotification } from '../context/NotificationContext';
-import {type Product } from '../types';
+import { type Product } from '../types';
 import ProductModal from '../components/product/ProductModal';
 
 const featuresData: Product[] = [
@@ -46,10 +44,7 @@ const featuresData: Product[] = [
 ];
 
 const Features: React.FC = () => {
-  const { addToCart } = useCart();
-  const { showNotification } = useNotification();
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-
 
   return (
     <>
@@ -72,7 +67,7 @@ const Features: React.FC = () => {
                 image={feature.image}
                 price={`$${feature.price.toFixed(2)}`}
                 colors={feature.colors}
-                onCardClick={() => setSelectedProduct(feature)} 
+                onCardClick={() => setSelectedProduct(feature)}
               />
             ))}
           </div>
