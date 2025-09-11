@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import HeaderLogo from '../assets/HeaderStyleReusable.png';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const { toggleCart, cartCount } = useCart();
+  const { openModal } = useAuth();
 
   const navLinks = [
     { href: '/about', label: 'About' },
@@ -33,12 +35,12 @@ const Header: React.FC = () => {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/"
+            <button
+              onClick={openModal}
               className="text-teal-600 hover:text-teal-800 transition-colors duration-200 font-semibold"
             >
               Sign In
-            </Link>
+            </button>
             <button onClick={toggleCart} className="relative text-gray-600 hover:text-teal-600">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -96,13 +98,12 @@ const Header: React.FC = () => {
               </Link>
             ))}
              <div className="pt-2 px-3">
-                <Link
-                  to="/"
+                <button
+                  onClick={() => { openModal(); setIsMenuOpen(false); }}
                   className="bg-teal-600 text-white block w-full text-center px-3 py-2 rounded-md text-base font-medium"
-                   onClick={() => setIsMenuOpen(false)}
                 >
                   Sign In
-                </Link>
+                </button>
             </div>
           </div>
         </div>
