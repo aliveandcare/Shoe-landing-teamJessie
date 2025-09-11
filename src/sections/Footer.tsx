@@ -12,19 +12,19 @@ const Footer: React.FC = () => {
             <p className="text-sm text-gray-600">&copy; {currentYear} ShoeStyle. All rights reserved.</p>
           </div>
           <div className="flex items-center space-x-6">
-            <Link to="/" className="text-sm text-gray-600 hover:text-teal-600 transition-colors">
+            <Link to="/about" className="text-sm text-gray-600 hover:text-teal-600 transition-colors">
               About
             </Link>
-            <Link to="/" className="text-sm text-gray-600 hover:text-teal-600 transition-colors">
+            <Link to="/product" className="text-sm text-gray-600 hover:text-teal-600 transition-colors">
               Products
             </Link>
-            <Link to="/" className="text-sm text-gray-600 hover:text-teal-600 transition-colors">
+            <Link to="/contact" className="text-sm text-gray-600 hover:text-teal-600 transition-colors">
               Contact
             </Link>
-            <Link to="/" className="text-sm text-gray-600 hover:text-teal-600 transition-colors">
+            <Link to="/privacy" className="text-sm text-gray-600 hover:text-teal-600 transition-colors">
               Privacy
             </Link>
-            <Link to="/" className="text-sm text-gray-600 hover:text-teal-600 transition-colors">
+            <Link to="/terms" className="text-sm text-gray-600 hover:text-teal-600 transition-colors">
               Terms
             </Link>
           </div>
@@ -35,5 +35,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-
-
